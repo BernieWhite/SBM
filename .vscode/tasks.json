@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build module",
+            "command": "./build.ps1",
+            "type": "shell",
+            "args": [],
+            "problemMatcher": [],
+            "presentation": {
+                "clear": true,
+                "panel": "dedicated"
+            },
+            "group": "build"
+        }
+    ]
+}

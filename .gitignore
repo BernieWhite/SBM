@@ -1,0 +1,6 @@
+
+.vs/
+out/
+reports/
+**/bin/
+**/obj/
