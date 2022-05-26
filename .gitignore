@@ -4,3 +4,5 @@ out/
 reports/
 **/bin/
 **/obj/
+*.user
+*.local.json
