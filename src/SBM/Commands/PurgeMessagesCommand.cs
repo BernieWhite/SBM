@@ -77,7 +77,7 @@ namespace SBM
             {
                 if (Queue.HasFlag(Queue.Standard))
                     workers.Add(Run(ConnectionString, TopicName, SubscriptionName[i], false, timeout, batchSize, retry, Prefetch));
-                
+
                 if (Queue.HasFlag(Queue.DeadLetter))
                     workers.Add(Run(ConnectionString, TopicName, SubscriptionName[i], true, timeout, batchSize, retry, Prefetch));
             }
@@ -118,7 +118,7 @@ namespace SBM
                 while (iteration <= retry)
                 {
                     var startTime = _Timer.ElapsedMilliseconds;
-                    var maxWaitTime = TimeSpan.FromSeconds(timeout << iteration);
+                    var maxWaitTime = TimeSpan.FromSeconds(timeout << iteration - 1);
                     IReadOnlyList<ServiceBusReceivedMessage> messages = null;
                     try
                     {
@@ -142,7 +142,7 @@ namespace SBM
 
                             iteration++;
                             if (iteration <= retry)
-                                Console.WriteLine($"{r.EntityPath}: Increasing wait time for iteration ${iteration}");
+                                Console.WriteLine($"{r.EntityPath}: Increasing wait time for iteration {iteration}");
                         }
                         else if (messages != null || messages.Count > 0)
                         {

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SBM": {
+      "commandName": "Project"
+    },
+    "Launch": {
+      "commandName": "Executable",
+      "executablePath": "pwsh",
+      "commandLineArgs": "-NoExit -c Import-Module .\\SBM.dll"
+    }
+  }
+}
